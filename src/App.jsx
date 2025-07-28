@@ -7,21 +7,36 @@ import './App.css'
 function App() {
   const [bosses, setBosses] = useState({
     Papulatus: {
-      Easy: { clears: 0, value: 684500 },
       Normal: { clears: 0, value: 2664500 },
       Hard: { clears: 0, value: 26450000 }
     }, 
     Zakum:{
-      Easy: { clears: 0, value: 684500 },
       Normal: { clears: 0, value: 2664500 },
       Hard: { clears: 0, value: 26450000 }
     },
     Arkarium:{
-      Easy: { clears: 0, value: 684500 },
       Normal: { clears: 0, value: 2664500 },
       Hard: { clears: 0, value: 26450000 }
     },
   })
+
+  const [maxClears, setMaxClears] = useState(0)  
+
+  const updateClears = (bossName, difficulty, newValue) => {
+    setBosses(prev => ({
+      ...prev,
+      [bossName]: {
+        ...prev[bossName],
+        [difficulty]: {
+          ...prev[bossName][difficulty],
+          clears: newValue
+        }
+      }
+    }));
+    setMaxClears(prev=> prev + newValue)
+  };
+
+          
 
   const weeklyClearLimit = [0,1,2,3,4,5,6,7,8,9,10,11,12]
   
@@ -37,21 +52,14 @@ function App() {
             bossName={key}
             bosses={bosses}
             weeklyClearLimit={weeklyClearLimit}
-            updateClears={(difficulty, newValue) =>
-              setBosses(prev => ({
-                ...prev,
-                  key: {
-                    ...prev.key,
-                    [difficulty]: {
-                      ...prev.key[difficulty],
-                      clears: newValue
-                    }
-                  }
-              }))
-            }
+            updateClears={updateClears}
           />
         ))
       }
+      <div>
+        {maxClears > 180 ? 'You are selling too many crystals' : null}
+        {maxClears}
+      </div>
       
 
     </>
