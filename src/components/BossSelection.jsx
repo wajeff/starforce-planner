@@ -1,13 +1,24 @@
-const BossSelection = ({bossName, bosses}) => {
+const BossSelection = ({bossName, bosses, updateClears, weeklyClearLimit}) => {
   return (
     <div> 
       <div>
+
         <h2>{bossName}</h2>
-        {Object.entries(bosses[bossName]).map(([difficulty, count])=>(
-          <div key ={difficulty}>
-            {difficulty}
-          </div>
-        ))}
+          {Object.keys(bosses[bossName]).map(key=>
+          <section key={key}>
+            <label htmlFor="clear-select">{key}</label>
+            <select name ='bosses' id ='clear-select'>
+              {weeklyClearLimit.map(number=>
+              <option key={number} value="{number}">{number}</option>
+            )}
+            </select>
+            
+          </section>
+          
+
+        )}
+        
+        
       </div>
     </div>
   )
