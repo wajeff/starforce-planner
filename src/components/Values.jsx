@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-const Values = ({maxClears,setMaxClears, totalValue, setTotalValue,bosses, reboot, total, setTotal, ursus}) => {
+const Values = ({maxClears,setMaxClears,bosses, reboot, total, setTotal, ursus}) => {
   useEffect(() => {
     let calculatedTotal = 0;
     Object.entries(bosses).forEach(([bossName, difficulties]) => {

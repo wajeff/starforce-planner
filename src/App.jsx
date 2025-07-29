@@ -43,7 +43,7 @@ function App() {
   };
   
   const [maxClears, setMaxClears] = useState(0)  
-  const [totalValue, setTotalValue] = useState(0)
+
   const weeklyClearLimit = [0,1,2,3,4,5,6,7,8,9,10,11,12]
   const [level, setLevel] = useState(0)
   const [ursus, setUrsus] = useState({
@@ -88,8 +88,6 @@ function App() {
       <Values
         maxClears = {maxClears}
         setMaxClears = {setMaxClears}
-        totalValue = {totalValue}
-        setTotalValue = {setTotalValue}
         bosses={bosses}
         reboot={reboot}
         ursus={ursus}
