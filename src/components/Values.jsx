@@ -4,7 +4,7 @@ const Values = ({maxClears,setMaxClears, totalValue, setTotalValue,bosses, reboo
     let calculatedTotal = 0;
     Object.entries(bosses).forEach(([bossName, difficulties]) => {
       Object.entries(difficulties).forEach(([difficulty, data]) => {
-        calculatedTotal += data.clears * data.value;
+        calculatedTotal += data.clears * data.value *reboot;
       });
     });
     calculatedTotal+=ursus.clears*ursus.level*ursus.mesosPerLevel*reboot*2

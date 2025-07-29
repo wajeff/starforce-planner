@@ -115,6 +115,7 @@ function App() {
             clears={bosses[key]}
             bossName={key}
             bosses={bosses}
+            reboot={reboot}
             weeklyClearLimit={weeklyClearLimit}
             updateClears={updateClears}
           />

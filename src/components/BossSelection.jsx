@@ -1,4 +1,4 @@
-const BossSelection = ({bossName, bosses, updateClears, weeklyClearLimit}) => {
+const BossSelection = ({bossName, bosses, updateClears, weeklyClearLimit, reboot}) => {
   return (
     <div>
       <h2>{bossName}</h2>
@@ -14,8 +14,8 @@ const BossSelection = ({bossName, bosses, updateClears, weeklyClearLimit}) => {
                 <option key={number} value={number}>{number}</option>
               ))}
           </select>
-          <div>Crystal Value: {bosses[bossName][key].value}</div>
-          <div>Your clear value: {bosses[bossName][key].value * bosses[bossName][key].clears}</div>
+          <div>Crystal Value: {(bosses[bossName][key].value)*reboot}</div>
+          <div>Your clear value: {(bosses[bossName][key].value * bosses[bossName][key].clears)*reboot}</div>
         </section>
         
       ))}
