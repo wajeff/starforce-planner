@@ -1,4 +1,4 @@
-const Ursus = ({level, setLevel, ursus, setUrsus, handleUrsus, ursusToggle, ursusBoolean, usrusCalculation, reboot}) => {
+const Ursus = ({ ursus, setUrsus, handleUrsus, ursusToggle, ursusBoolean, usrusCalculation, reboot}) => {
   return (
     <div>
       <input
