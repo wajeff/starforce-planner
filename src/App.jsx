@@ -9,7 +9,7 @@ import Ursus from './components/Ursus'
 
 function App() {
   const [total, setTotal] = useState(0)
-  const [reboot, setReboot] = useState(0)
+  const [reboot, setReboot] = useState(1)
   const rebootToggle = (e) =>{
     setReboot(e.target.checked ? 5 : 1)
   }
