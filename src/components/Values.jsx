@@ -7,7 +7,7 @@ const Values = ({maxClears,setMaxClears, totalValue, setTotalValue,bosses, reboo
         calculatedTotal += data.clears * data.value;
       });
     });
-    calculatedTotal+=ursus.clears*ursus.level*ursus.mesosPerLevel
+    calculatedTotal+=ursus.clears*ursus.level*ursus.mesosPerLevel*reboot*2
     setTotal(calculatedTotal);
   }, [bosses, ursus]);
 

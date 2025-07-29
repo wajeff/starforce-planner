@@ -21,7 +21,7 @@ const Ursus = ({level, setLevel, ursus, setUrsus, handleUrsus, ursusToggle, ursu
       <section>
         Your ursus clear value: {
           
-          ursusBoolean ? <div>{13820.625 * parseInt(level) * 2 * reboot}</div> : 0
+          ursusBoolean ? <div>{13820.625 * parseInt(ursus.level) * 2 * reboot}</div> : 0
           
         }
       </section>

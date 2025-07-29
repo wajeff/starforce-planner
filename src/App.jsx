@@ -57,7 +57,10 @@ function App() {
   }
   const handleUrsus =(e)=>{
     const currentLevel = e.target.value
-    setLevel(currentLevel)
+    setUrsus(prev => ({
+    ...prev,
+    level: currentLevel
+  }));
   }
   function usrusCalculation(level, reboot){
     const sRankMesoUnits = 1842.75
