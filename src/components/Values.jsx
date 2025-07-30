@@ -1,19 +1,29 @@
 import { useEffect } from "react";
-const Values = ({maxClears,setMaxClears,bosses, reboot, total, setTotal, ursus}) => {
+import MapleTour from "./MapleTour";
+const Values = ({mapleTour, maxClears, setMaxClears,bosses, reboot, total, setTotal, ursus}) => {
   useEffect(() => {
     let calculatedTotal = 0;
+    let clearsCount = 0;
     Object.entries(bosses).forEach(([bossName, difficulties]) => {
       Object.entries(difficulties).forEach(([difficulty, data]) => {
         calculatedTotal += data.clears * data.value *reboot;
+        clearsCount+= data.clears
       });
     });
     calculatedTotal+=ursus.clears*ursus.level*ursus.mesosPerLevel*reboot*2
+    calculatedTotal+=mapleTour.clears*mapleTour.value*reboot
     setTotal(calculatedTotal);
-  }, [bosses, ursus]);
+    setMaxClears(clearsCount)
+
+  }, [bosses, ursus, mapleTour, reboot]);
 
   return (
     <div>
       <div>You make {total.toLocaleString()} mesos</div>
+      <div>
+        {maxClears > 180 ? `You are selling ${Math.abs(180-maxClears)}too many crystals`: `You are selling ${maxClears} crystals` } 
+
+      </div>
     </div>
   );
 }

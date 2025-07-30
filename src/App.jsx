@@ -6,6 +6,7 @@ import './App.css'
 import Reboot from './components/Reboot'
 import Values from './components/Values'
 import Ursus from './components/Ursus'
+import MapleTour from './components/MapleTour'
 
 function App() {
   const [total, setTotal] = useState(0)
@@ -74,7 +75,29 @@ function App() {
     return mesoBase * sRankMesoUnits * reboot
   }
  
-  
+  const [mapleTour, setMapleTour] = useState({
+    clears: 0, value: 5446815
+  })
+  const handleTour = (e) => {
+    let input = parseInt(e.target.value);
+    let currentClears = input;
+
+    if (input > 49) {
+      currentClears = 49;
+      setTimeout(() => {
+        e.target.value = 49;
+      }, 300);
+    }
+
+    setMapleTour(prev => ({
+      ...prev,
+      clears: currentClears
+    }));
+  };
+  // useEffect(()=>{
+  //   console.log(mapleTour)
+  // },[mapleTour])
+
   return (
     <>
       <h1>Starforce Planner</h1>
@@ -91,6 +114,7 @@ function App() {
         bosses={bosses}
         reboot={reboot}
         ursus={ursus}
+        mapleTour={mapleTour}
         total={total}
         setTotal= {setTotal}
 
@@ -103,6 +127,12 @@ function App() {
         ursusToggle={ursusToggle}
         ursusBoolean={ursusBoolean}
         usrusCalculation={usrusCalculation}
+        reboot={reboot}
+      />
+      <MapleTour
+        mapleTour={mapleTour}
+        setMapleTour={setMapleTour}
+        handleTour={handleTour}
         reboot={reboot}
       />
       {
