@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import MapleTour from "./MapleTour";
 const Values = ({mapleTour, maxClears, setMaxClears,bosses, reboot, total, setTotal, ursus}) => {
   useEffect(() => {
     let calculatedTotal = 0;

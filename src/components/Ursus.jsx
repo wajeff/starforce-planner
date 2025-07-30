@@ -1,13 +1,7 @@
-const Ursus = ({ ursus, setUrsus, handleUrsus, ursusToggle, ursusBoolean, usrusCalculation, reboot}) => {
+const Ursus = ({ ursus, handleUrsus, reboot}) => {
   return (
     <div>
-      <input
-        type = 'checkbox'
-        id = 'ursus-on-off'
-        name = 'ursus-on-off'
-        onChange = {ursusToggle}
-      >
-      </input>
+    
       {}
       <input
         type="text"
@@ -21,7 +15,7 @@ const Ursus = ({ ursus, setUrsus, handleUrsus, ursusToggle, ursusBoolean, usrusC
       <section>
         Your ursus clear value: {
           
-          ursusBoolean ? <div>{13820.625 * parseInt(ursus.level) * 2 * reboot}</div> : 0
+         <div>{13820.625 * parseInt(ursus.level) * 2 * reboot}</div>
           
         }
       </section>

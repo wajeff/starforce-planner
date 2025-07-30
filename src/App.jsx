@@ -50,12 +50,6 @@ function App() {
   const [ursus, setUrsus] = useState({
     clears : 3, level: 0, mesosPerLevel: 13820.625
   })
-  const [ursusBoolean, setUrsusBoolean] = useState(false)
-  const ursusToggle = (e)=>{
-    setUrsusBoolean(
-      prev=> !prev 
-    )
-  }
   const handleUrsus =(e)=>{
     const currentLevel = e.target.value
     setUrsus(prev => ({
@@ -124,8 +118,6 @@ function App() {
         setUrsus={setUrsus}
 
         handleUrsus={handleUrsus}
-        ursusToggle={ursusToggle}
-        ursusBoolean={ursusBoolean}
         usrusCalculation={usrusCalculation}
         reboot={reboot}
       />
