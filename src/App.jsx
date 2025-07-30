@@ -9,7 +9,21 @@ import Ursus from './components/Ursus'
 import MapleTour from './components/MapleTour'
 
 function App() {
+  const today=new Date().toISOString().split('T')[0]
+  const [daysDifference, setdaysDifference] = useState(0)
+  const handleCalendar=(e)=>{
+    const date = e.target.value
+    const selected = new Date(date);
+    const current = new Date(today);
+    const diffInDays = (selected-current) / (1000 * 60 * 60 * 24)
+    setdaysDifference(diffInDays)
+    console.log(diffInDays)
+  }
+
   const [total, setTotal] = useState(0)
+
+
+  
   const [reboot, setReboot] = useState(1)
   const rebootToggle = (e) =>{
     setReboot(e.target.checked ? 5 : 1)
@@ -95,7 +109,9 @@ function App() {
   return (
     <>
       <h1>Starforce Planner</h1>
-      <Calendar/>
+      <Calendar
+        handleCalendar={handleCalendar}
+      />
       <Reboot
         reboot={reboot}
         setReboot={setReboot}
@@ -109,6 +125,7 @@ function App() {
         reboot={reboot}
         ursus={ursus}
         mapleTour={mapleTour}
+        daysDifference={daysDifference}
         total={total}
         setTotal= {setTotal}
 
@@ -116,7 +133,7 @@ function App() {
       <Ursus
         ursus={ursus}
         setUrsus={setUrsus}
-
+        daysDifference={daysDifference}
         handleUrsus={handleUrsus}
         usrusCalculation={usrusCalculation}
         reboot={reboot}

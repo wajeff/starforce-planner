@@ -1,6 +1,13 @@
-const Calendar = () => {
+const Calendar = ({handleCalendar}) => {
   return (
-    <div>Calendar</div>
+    <div>
+      <input 
+      type="date"
+      onChange={handleCalendar}
+      >
+        
+      </input>
+    </div>
   )
 }
 

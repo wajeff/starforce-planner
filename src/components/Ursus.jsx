@@ -1,4 +1,5 @@
-const Ursus = ({ ursus, handleUrsus, reboot}) => {
+const Ursus = ({ ursus, handleUrsus, reboot,daysDifference}) => {
+  console.log(daysDifference)
   return (
     <div>
     
@@ -15,7 +16,7 @@ const Ursus = ({ ursus, handleUrsus, reboot}) => {
       <section>
         Your ursus clear value: {
           
-         <div>{13820.625 * parseInt(ursus.level) * 2 * reboot}</div>
+         <div>{13820.625 * parseInt(ursus.level) * 2 * reboot * 3* daysDifference}</div>
           
         }
       </section>

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-const Values = ({mapleTour, maxClears, setMaxClears,bosses, reboot, total, setTotal, ursus}) => {
+const Values = ({mapleTour, maxClears, setMaxClears,bosses, reboot, total, setTotal, ursus, daysDifference}) => {
   useEffect(() => {
     let calculatedTotal = 0;
     let clearsCount = 0;
@@ -9,7 +9,7 @@ const Values = ({mapleTour, maxClears, setMaxClears,bosses, reboot, total, setTo
         clearsCount+= data.clears
       });
     });
-    calculatedTotal+=ursus.clears*ursus.level*ursus.mesosPerLevel*reboot*2
+    calculatedTotal+=ursus.clears*ursus.level*ursus.mesosPerLevel*reboot*2*daysDifference
     calculatedTotal+=mapleTour.clears*mapleTour.value*reboot
     setTotal(calculatedTotal);
     setMaxClears(clearsCount)
