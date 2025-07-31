@@ -48,7 +48,7 @@ function App() {
   const rebootToggle = (e) =>{
     setReboot(e.target.checked ? 5 : 1)
   }
-  const [dailyBosses, setDailyBosses] = useState({
+  const [dailyBosses, setDailyBosses] = usePersistentState("dailyBosses", {
     Zakum:{
       Easy: { clears: 0, value: 200_000 },
       Normal: { clears: 0, value: 612_500 }
@@ -106,7 +106,7 @@ function App() {
     }
   })
 
-  const [weeklyBosses, setWeeklyBosses] = useState({
+  const [weeklyBosses, setWeeklyBosses] = usePersistentState("weeklyBosses", {
   Cygnus: {
     Easy:   { clears: 0, value: 9_112_500 },
     Normal: { clears: 0, value: 14_450_000 }
