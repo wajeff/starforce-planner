@@ -10,24 +10,29 @@ import MapleTour from './components/MapleTour'
 
 function App() {
   const today=new Date().toISOString().split('T')[0]
-
   const [daysDifference, setDaysDifference] = useState(0)
   const [targetDate, setTargetDate] = useState(0)
   const [weeklyResetCount, setWeeklyResetCount] = useState(0)
 
   const handleCalendar=(e)=>{
+    setWeeklyResetCount(0)
     const date = e.target.value
-    setTargetDate(e.target.value)
     const selected = new Date(date);
     const current = new Date(today);
-    const diffInDays = (selected-current) / (1000 * 60 * 60 * 24)
+    let diffInDays = (selected-current) / (1000 * 60 * 60 * 24)
     setDaysDifference(diffInDays)
+    let thursdayCount = 0;
+    for(let i=0; i<diffInDays; i++){
+      current.setDate(current.getDate()+1)  
+      if(current.getDay()===3){
+        thursdayCount++
+      }
+    }
+    setWeeklyResetCount(thursdayCount)
   }
+  console.log(daysDifference)
 
   const [total, setTotal] = useState(0)
-
-
-  
   const [reboot, setReboot] = useState(1)
   const rebootToggle = (e) =>{
     setReboot(e.target.checked ? 5 : 1)
@@ -115,8 +120,6 @@ function App() {
       <h1>Starforce Planner</h1>
       <Calendar
         handleCalendar={handleCalendar}
-
-
       />
       <Reboot
         reboot={reboot}
@@ -134,6 +137,7 @@ function App() {
         daysDifference={daysDifference}
         total={total}
         setTotal= {setTotal}
+        weeklyResetCount={weeklyResetCount}
 
       />
       <Ursus

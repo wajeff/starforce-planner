@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-const Values = ({mapleTour, maxClears, setMaxClears,bosses, reboot, total, setTotal, ursus, daysDifference}) => {
+const Values = ({mapleTour, maxClears, setMaxClears,bosses, reboot, total, setTotal, ursus, daysDifference, weeklyResetCount}) => {
   useEffect(() => {
     let calculatedTotal = 0;
     let clearsCount = 0;
     Object.entries(bosses).forEach(([bossName, difficulties]) => {
       Object.entries(difficulties).forEach(([difficulty, data]) => {
-        calculatedTotal += data.clears * data.value *reboot;
+        calculatedTotal += data.clears * data.value *reboot*weeklyResetCount;
         clearsCount+= data.clears
       });
     });
