@@ -1,4 +1,4 @@
-const BossSelection = ({bossName, bosses, updateClears, weeklyClearLimit, reboot}) => {
+const BossSelection = ({bossName, bosses, updateClears, weeklyClearLimit, reboot, setBosses}) => {
   return (
     <div>
       <h2>{bossName}</h2>
@@ -8,7 +8,7 @@ const BossSelection = ({bossName, bosses, updateClears, weeklyClearLimit, reboot
           <select
             id={`${bossName}-${key}-select`}
             value={bosses[bossName][key].clears}
-            onChange={(e) => updateClears(bossName, key, parseInt(e.target.value))}
+            onChange={(e) => updateClears(setBosses,bossName, key, parseInt(e.target.value))}
             >
               {weeklyClearLimit.map((number) => (
                 <option key={number} value={number}>{number}</option>
