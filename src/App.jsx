@@ -8,10 +8,22 @@ import Values from './components/Values'
 import Ursus from './components/Ursus'
 import MapleTour from './components/MapleTour'
 
+function usePersistentState(key, defaultValue) {
+  const [value, setValue] = useState(() => {
+    const cached = localStorage.getItem(key);
+    return cached ? JSON.parse(cached) : defaultValue;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value));
+  }, [key, value]);
+
+  return [value, setValue];
+  }
+
 function App() {
   const today=new Date().toISOString().split('T')[0]
   const [daysDifference, setDaysDifference] = useState(0)
-  const [targetDate, setTargetDate] = useState(0)
   const [weeklyResetCount, setWeeklyResetCount] = useState(0)
 
   const handleCalendar=(e)=>{
@@ -30,7 +42,6 @@ function App() {
     }
     setWeeklyResetCount(thursdayCount)
   }
-  console.log(daysDifference)
 
   const [total, setTotal] = useState(0)
   const [reboot, setReboot] = useState(1)
@@ -185,8 +196,6 @@ function App() {
     Extreme: { clears: 0, value: 920_000_000 }
   }
 })
-
-  
 
   const updateClears = (setBosses, bossName, difficulty, newValue) => {
     setBosses(prev => ({
