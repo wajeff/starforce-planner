@@ -22,7 +22,7 @@ const Values = ({
     setTotal(calculatedTotal);
     setMaxClears(clearsCount)
 
-  }, [dailyBosses, ursus, mapleTour, reboot, daysDifference]);
+  }, [dailyBosses, weeklyBosses, ursus, mapleTour, reboot, daysDifference]);
 
   return (
     <div>
