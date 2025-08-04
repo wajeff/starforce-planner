@@ -7,6 +7,7 @@ import Reboot from './components/Reboot'
 import Values from './components/Values'
 import Ursus from './components/Ursus'
 import MapleTour from './components/MapleTour'
+import DailyFarm from './components/DailyFarm'
 
 function usePersistentState(key, defaultValue) {
   const [value, setValue] = useState(() => {
@@ -47,6 +48,12 @@ function App() {
   const [reboot, setReboot] = useState(1)
   const rebootToggle = (e) =>{
     setReboot(e.target.checked ? 5 : 1)
+  }
+
+
+  const [dailyFarm, setDailyFarm] = useState(0)
+  const handleDailyFarm = (e)=>{
+    setDailyFarm(e.target.value)
   }
   const [dailyBosses, setDailyBosses] = usePersistentState("dailyBosses", {
     Zakum:{
@@ -283,7 +290,13 @@ function App() {
         setTotal= {setTotal}
         weeklyResetCount={weeklyResetCount}
         weeklyBosses={weeklyBosses}
-
+        dailyFarm={dailyFarm}
+      />
+      <DailyFarm
+        daysDifference={daysDifference}
+        dailyFarm={dailyFarm}
+        setDailyFarm={setDailyFarm}
+        handleDailyFarm={handleDailyFarm}
       />
       <Ursus
         ursus={ursus}
