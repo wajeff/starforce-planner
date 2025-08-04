@@ -8,6 +8,7 @@ import Values from './components/Values'
 import Ursus from './components/Ursus'
 import MapleTour from './components/MapleTour'
 import DailyFarm from './components/DailyFarm'
+import Reset from './components/Reset'
 
 function usePersistentState(key, defaultValue) {
   const [value, setValue] = useState(() => {
@@ -262,6 +263,22 @@ function App() {
       clears: currentClears
     }));
   };
+
+  const handleReset = () => {
+    const updatedBosses = { ...dailyBosses }; // shallow copy of top level
+
+    Object.entries(updatedBosses).forEach(([bossName, difficulties]) => {
+      Object.entries(difficulties).forEach(([difficulty, data]) => {
+        updatedBosses[bossName][difficulty] = {
+          ...data,
+          clears: 0 // update just the clears value
+        };
+      });
+    });
+
+    setDailyBosses(updatedBosses); // set once at the end
+  };
+
   // useEffect(()=>{
   //   console.log(mapleTour)
   // },[mapleTour])
@@ -269,6 +286,10 @@ function App() {
   return (
     <>
       <h1>Starforce Planner</h1>
+      <Reset
+        setMapleTour={setMapleTour}
+        handleReset={handleReset}
+      />
       <Calendar
         handleCalendar={handleCalendar}
       />
