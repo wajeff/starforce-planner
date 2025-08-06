@@ -1,6 +1,7 @@
 const MapleTour = ({mapleTour, setMapleTour, handleTour, reboot}) => {
   return (
     <div>
+      <h2>Maple Tour</h2>
       <input
       type='number'
       onChange={handleTour}
