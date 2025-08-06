@@ -265,20 +265,27 @@ function App() {
   };
 
   const handleReset = () => {
-    const updatedBosses = { ...dailyBosses }; // shallow copy of top level
-
-    Object.entries(updatedBosses).forEach(([bossName, difficulties]) => {
+    const updatedDailyBosses = { ...dailyBosses }; 
+    Object.entries(updatedDailyBosses).forEach(([bossName, difficulties]) => {
       Object.entries(difficulties).forEach(([difficulty, data]) => {
-        updatedBosses[bossName][difficulty] = {
+        updatedDailyBosses[bossName][difficulty] = {
           ...data,
-          clears: 0 // update just the clears value
+          clears: 0 
         };
       });
     });
-
-    setDailyBosses(updatedBosses); // set once at the end
+    const updatedWeeklyBosses = {...weeklyBosses};
+    Object.entries(updatedWeeklyBosses).forEach(([bossName, difficulties]) => {
+      Object.entries(difficulties).forEach(([difficulty, data]) => {
+        updatedWeeklyBosses[bossName][difficulty] = {
+          ...data,
+          clears: 0 
+        };
+      });
+    });
+    setDailyBosses(updatedWeeklyBosses);
   };
-
+  
   // useEffect(()=>{
   //   console.log(mapleTour)
   // },[mapleTour])
