@@ -29,7 +29,7 @@ const Values = ({
 
   return (
     <div>
-      <div>You make {total.toLocaleString()} mesos</div>
+      <div>You will have {total.toLocaleString()} mesos</div>
       <div>
         {maxClears > 180 ? `You are selling ${Math.abs(180-maxClears)}too many crystals`: `You are selling ${maxClears} crystals` } 
 
