@@ -18,7 +18,7 @@ const Values = ({
       });
     });
     calculatedTotal+=ursus.clears*ursus.level*ursus.mesosPerLevel*reboot*2*daysDifference
-    calculatedTotal+=mapleTour.clears*mapleTour.value*reboot
+    calculatedTotal+=mapleTour.clears*mapleTour.value*daysDifference*reboot
     calculatedTotal+=parseInt(dailyFarm*daysDifference)
     setTotal(calculatedTotal);
     setMaxClears(clearsCount)

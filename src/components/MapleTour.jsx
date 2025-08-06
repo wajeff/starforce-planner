@@ -5,11 +5,10 @@ const MapleTour = ({mapleTour, setMapleTour, handleTour, reboot}) => {
       <input
       type='number'
       onChange={handleTour}
-      max='49'
+      max='7'
       maxLength='2'>
       </input>
       <div>
-        
         {`You are making ${mapleTour.clears*mapleTour.value*reboot} mesos`}
       </div>
     </div>
