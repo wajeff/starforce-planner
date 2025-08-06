@@ -293,7 +293,7 @@ function App() {
 
   return (
     <>
-      <h1>Starforce Planner</h1>
+      <h1>Meso Planner</h1>
       <Reset
         setMapleTour={setMapleTour}
         handleReset={handleReset}
