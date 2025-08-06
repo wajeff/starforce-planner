@@ -46,7 +46,7 @@ function App() {
     }
     setWeeklyResetCount(thursdayCount)
   }
-
+  
   const [total, setTotal] = useState(0)
   const [reboot, setReboot] = usePersistentState('reboot', 1)
   const rebootToggle = (e) =>{
@@ -118,7 +118,6 @@ function App() {
       Normal: { clears: 0, value: 1_404_500}
     }
   })
-
   const [weeklyBosses, setWeeklyBosses] = usePersistentState("weeklyBosses", {
   Cygnus: {
     Easy:   { clears: 0, value: 9_112_500 },
@@ -355,36 +354,44 @@ function App() {
         handleTour={handleTour}
         reboot={reboot}
       />
-      <h2>Daily Bosses</h2>
-      {
-        Object.keys(dailyBosses).map(key=>(
-          <BossSelection 
-            key={key}
-            clears={dailyBosses[key]}
-            bossName={key}
-            bosses={dailyBosses}
-            reboot={reboot}
-            weeklyClearLimit={weeklyClearLimit}
-            updateClears={updateClears}
-            setBosses={setDailyBosses}
-          />
-        ))
-      }
-      <h2>Weekly Bosses</h2>
-      {
-        Object.keys(weeklyBosses).map(key=>(
-          <BossSelection 
-            key={key}
-            clears={weeklyBosses[key]}
-            bossName={key}
-            bosses={weeklyBosses}
-            reboot={reboot}
-            weeklyClearLimit={weeklyClearLimit}
-            updateClears={updateClears}
-            setBosses={setWeeklyBosses}
-          />
-        ))
-      }
+      <section className='bosses__container'>
+        <section className='bosses__section'>
+           <h2>Daily Bosses</h2>
+            {
+            Object.keys(dailyBosses).map(key=>(
+            <BossSelection 
+              key={key}
+              clears={dailyBosses[key]}
+              bossName={key}
+              bosses={dailyBosses}
+              reboot={reboot}
+              weeklyClearLimit={weeklyClearLimit}
+              updateClears={updateClears}
+              setBosses={setDailyBosses}
+            />
+          ))
+          }
+        </section>
+        <section className='bosses__section'>
+          <h2>Weekly Bosses</h2>
+          {
+          Object.keys(weeklyBosses).map(key=>(
+            <BossSelection 
+              key={key}
+              clears={weeklyBosses[key]}
+              bossName={key}
+              bosses={weeklyBosses}
+              reboot={reboot}
+              weeklyClearLimit={weeklyClearLimit}
+              updateClears={updateClears}
+              setBosses={setWeeklyBosses}
+            />
+          ))
+          }
+        </section>
+      
+      </section>
+      
       
     </>
   )
