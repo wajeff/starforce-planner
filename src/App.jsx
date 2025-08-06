@@ -285,6 +285,11 @@ function App() {
     });
     setDailyBosses(updatedDailyBosses);
     setWeeklyBosses(updatedWeeklyBosses);
+    setMapleTour(prev=>({
+      ...prev,
+      clears: 0
+    })      
+    );
   };
   
   // useEffect(()=>{
