@@ -1,6 +1,7 @@
 import { useEffect } from "react";
+import CurrentMeso from "./CurrentMeso";
 const Values = ({
-  mapleTour, maxClears, setMaxClears,dailyBosses, reboot, total, setTotal, ursus, daysDifference, weeklyResetCount, weeklyBosses, dailyFarm
+  mapleTour, maxClears, setMaxClears,dailyBosses, reboot, total, setTotal, ursus, daysDifference, weeklyResetCount, weeklyBosses, dailyFarm, currentMeso
   }) => {
   useEffect(() => {
     let calculatedTotal = 0;
@@ -20,10 +21,11 @@ const Values = ({
     calculatedTotal+=ursus.clears*ursus.level*ursus.mesosPerLevel*reboot*2*daysDifference
     calculatedTotal+=mapleTour.clears*mapleTour.value*daysDifference*reboot
     calculatedTotal+=parseInt(dailyFarm*daysDifference)
+    calculatedTotal+=currentMeso
     setTotal(calculatedTotal);
     setMaxClears(clearsCount)
 
-  }, [dailyBosses, weeklyBosses, ursus, mapleTour, reboot, daysDifference, dailyFarm]);
+  }, [dailyBosses, weeklyBosses, ursus, mapleTour, reboot, daysDifference, dailyFarm, currentMeso]);
 
   return (
     <div>

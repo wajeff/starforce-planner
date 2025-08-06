@@ -9,6 +9,8 @@ import Ursus from './components/Ursus'
 import MapleTour from './components/MapleTour'
 import DailyFarm from './components/DailyFarm'
 import Reset from './components/Reset'
+import CurrentMeso from './components/CurrentMeso'
+
 
 function usePersistentState(key, defaultValue) {
   const [value, setValue] = useState(() => {
@@ -51,7 +53,10 @@ function App() {
     setReboot(e.target.checked ? 5 : 1)
   }
 
-
+  const [currentMeso, setCurrentMeso] = usePersistentState('currentMeso', 0)
+  const handleCurrentMeso=(e)=>{
+    setCurrentMeso(e.target.value * 1_000_000)
+  }
   const [dailyFarm, setDailyFarm] = useState(0)
   const handleDailyFarm = (e)=>{
     setDailyFarm(e.target.value*1_000_000)
@@ -311,7 +316,10 @@ function App() {
         setReboot={setReboot}
         rebootToggle={rebootToggle}
       />
-
+      <CurrentMeso
+        currentMeso={currentMeso}
+        handleCurrentMeso={handleCurrentMeso}
+      />
       <Values
         maxClears = {maxClears}
         setMaxClears = {setMaxClears}
@@ -325,6 +333,7 @@ function App() {
         weeklyResetCount={weeklyResetCount}
         weeklyBosses={weeklyBosses}
         dailyFarm={dailyFarm}
+        currentMeso={currentMeso}
       />
       <DailyFarm
         daysDifference={daysDifference}
