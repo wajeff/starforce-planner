@@ -2,7 +2,7 @@ const Ursus = ({ ursus, handleUrsus, reboot,daysDifference}) => {
   console.log(daysDifference)
   return (
     <div>
-    
+      <h2>Ursus</h2>
       {}
       <input
         type="text"

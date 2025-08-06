@@ -54,7 +54,7 @@ function App() {
 
   const [dailyFarm, setDailyFarm] = useState(0)
   const handleDailyFarm = (e)=>{
-    setDailyFarm(e.target.value)
+    setDailyFarm(e.target.value*1_000_000)
   }
   const [dailyBosses, setDailyBosses] = usePersistentState("dailyBosses", {
     Zakum:{
