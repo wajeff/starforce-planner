@@ -244,7 +244,7 @@ function App() {
     return mesoBase * sRankMesoUnits * reboot
   }
  
-  const [mapleTour, setMapleTour] = useState({
+  const [mapleTour, setMapleTour] = usePersistentState('mapleTour',{
     clears: 0, value: 5446815
   })
   const handleTour = (e) => {

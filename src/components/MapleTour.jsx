@@ -6,6 +6,7 @@ const MapleTour = ({mapleTour, setMapleTour, handleTour, reboot}) => {
       type='number'
       onChange={handleTour}
       max='7'
+      value={mapleTour.clears}
       maxLength='2'>
       </input>
       <div>
