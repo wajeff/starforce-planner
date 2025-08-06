@@ -355,6 +355,7 @@ function App() {
         handleTour={handleTour}
         reboot={reboot}
       />
+      <h2>Daily Bosses</h2>
       {
         Object.keys(dailyBosses).map(key=>(
           <BossSelection 
@@ -369,6 +370,7 @@ function App() {
           />
         ))
       }
+      <h2>Weekly Bosses</h2>
       {
         Object.keys(weeklyBosses).map(key=>(
           <BossSelection 
