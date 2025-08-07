@@ -295,7 +295,13 @@ function App() {
     })      
     );
     setReboot(1)
+    setDailyFarm(0)
+    setUrsus(prev=>({
+      ...prev,
+      level: 0,
+    }));
   };
+  console.log(ursus.level)
   
   // useEffect(()=>{
   //   console.log(mapleTour)
