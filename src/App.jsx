@@ -294,6 +294,7 @@ function App() {
       clears: 0
     })      
     );
+    setReboot(1)
   };
   
   // useEffect(()=>{
