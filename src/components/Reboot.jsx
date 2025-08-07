@@ -6,7 +6,9 @@ const Reboot = ({reboot, setReboot, rebootToggle}) => {
       <input
         type='checkbox'
         id='rebootToggle'
-        onChange={rebootToggle}/>
+        onChange={rebootToggle}
+        checked={reboot === 5}
+      />
     </section>
   )
 }
