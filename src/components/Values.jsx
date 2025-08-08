@@ -18,7 +18,8 @@ const Values = ({
         clearsCount+= data.clears
       });
     });
-    calculatedTotal+=ursus.clears*ursus.level*ursus.mesosPerLevel*reboot*2*daysDifference
+    ursus.level%2==0 ? 
+    calculatedTotal+=ursus.clears*ursus.level*ursus.mesosPerLevel*reboot*2*daysDifference:calculatedTotal+=ursus.clears*((ursus.level-1)+14/15)*ursus.mesosPerLevel*reboot*2*daysDifference
     calculatedTotal+=mapleTour.clears*mapleTour.value*daysDifference*reboot
     calculatedTotal += Number(dailyFarm || 0) * 1_000_000 * daysDifference;
     calculatedTotal+=currentMeso
