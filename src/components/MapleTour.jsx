@@ -1,4 +1,4 @@
-const MapleTour = ({mapleTour, setMapleTour, handleTour, reboot}) => {
+const MapleTour = ({mapleTour, handleTour, reboot}) => {
   return (
     <div>
       <h2>Maple Tour</h2>

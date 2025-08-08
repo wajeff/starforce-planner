@@ -1,4 +1,4 @@
-const DailyFarm = ({daysDifference, dailyFarm, setDailyFarm, handleDailyFarm}) => {
+const DailyFarm = ({dailyFarm, handleDailyFarm}) => {
   return (
     <div>
       <h2>
@@ -6,7 +6,6 @@ const DailyFarm = ({daysDifference, dailyFarm, setDailyFarm, handleDailyFarm}) =
       </h2>
       <div>
         <input 
-        type='number'
         onChange={handleDailyFarm}
         value={dailyFarm}
         placeholder='Million' />
