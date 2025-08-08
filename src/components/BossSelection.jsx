@@ -2,6 +2,7 @@ const BossSelection = ({bossName, bosses, updateClears, weeklyClearLimit, reboot
   return (
     <div>
       <h2>{bossName}</h2>
+      <img src={`/public/bosses/${bossName}.webp`}></img>
       {Object.keys(bosses[bossName]).map((key) => (
         <section key={key}>
           <label htmlFor={`${bossName}-${key}-select`}>{key}</label>
