@@ -20,7 +20,7 @@ const Values = ({
     });
     calculatedTotal+=ursus.clears*ursus.level*ursus.mesosPerLevel*reboot*2*daysDifference
     calculatedTotal+=mapleTour.clears*mapleTour.value*daysDifference*reboot
-    calculatedTotal+=parseInt(dailyFarm*daysDifference)
+    calculatedTotal+=parseInt(dailyFarm*1_000_000*daysDifference)
     calculatedTotal+=currentMeso
     setTotal(calculatedTotal);
     setMaxClears(clearsCount)

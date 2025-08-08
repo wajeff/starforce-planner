@@ -8,6 +8,7 @@ const DailyFarm = ({daysDifference, dailyFarm, setDailyFarm, handleDailyFarm}) =
         <input 
         type='number'
         onChange={handleDailyFarm}
+        value={dailyFarm}
         placeholder='Million' />
       </div>
       
