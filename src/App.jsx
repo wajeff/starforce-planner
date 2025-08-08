@@ -300,6 +300,7 @@ function App() {
       ...prev,
       level: 0,
     }));
+    setCurrentMeso(0)
   };
   console.log(ursus.level)
   
