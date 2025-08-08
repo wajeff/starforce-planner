@@ -353,7 +353,6 @@ function App() {
         setUrsus={setUrsus}
         daysDifference={daysDifference}
         handleUrsus={handleUrsus}
-        usrusCalculation={usrusCalculation}
         reboot={reboot}
       />
       <MapleTour
