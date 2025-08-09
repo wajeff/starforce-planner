@@ -1,8 +1,11 @@
+import styles from './BossSelection.module.css'
 const BossSelection = ({bossName, bosses, updateClears, weeklyClearLimit, reboot, setBosses}) => {
   return (
     <div>
       <h2>{bossName}</h2>
-      <img src={`/public/bosses/${bossName}.webp`}></img>
+      <img 
+        src={`/bosses/${bossName.toLowerCase()}.png`}
+        ></img>
       {Object.keys(bosses[bossName]).map((key) => (
         <section key={key}>
           <label htmlFor={`${bossName}-${key}-select`}>{key}</label>

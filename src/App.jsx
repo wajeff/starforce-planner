@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
 import Calendar from './components/Calendar'
-import BossSelection from './components/BossSelection'
+import BossSelection from './components/BossSelection/BossSelection'
 import './App.css'
 import Reboot from './components/Reboot'
 import Values from './components/Values'
@@ -85,7 +85,7 @@ function App() {
       Normal: { clears: 0, value: 1_152_000 },
       Hard: { clears: 0, value: 2_520_500 }
     },
-    Ranmaru:{
+    'mori ranmaru':{
       Normal: { clears: 0, value: 840_500 },
       Hard: { clears: 0, value: 2_664_500 }
     },
