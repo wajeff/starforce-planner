@@ -85,7 +85,7 @@ function App() {
       Normal: { clears: 0, value: 1_152_000 },
       Hard: { clears: 0, value: 2_520_500 }
     },
-    'mori ranmaru':{
+    'Mori Ranmaru':{
       Normal: { clears: 0, value: 840_500 },
       Hard: { clears: 0, value: 2_664_500 }
     },
@@ -186,7 +186,7 @@ function App() {
     Normal: { clears: 0, value: 52_812_500 },
     Hard:   { clears: 0, value: 96_800_000 }
   },
-  'Versus Hilla': {
+  'Verus Hilla': {
     Normal: { clears: 0, value: 89_520_000 },
     Hard:   { clears: 0, value: 110_450_000 }
   },
