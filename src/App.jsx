@@ -228,9 +228,9 @@ function App() {
 
   const weeklyClearLimit = [0,1,2,3,4,5,6,7,8,9,10,11,12]
 
-  const [ursus, setUrsus] = useState({
+  const [ursus, setUrsus] = usePersistentState('ursus',({
     clears : 3, level: 0, mesosPerLevel: 13820.625
-  })
+  }))
   const handleUrsus =(e)=>{
     const currentLevel = e.target.value
     setUrsus(prev => ({
