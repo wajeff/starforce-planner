@@ -1,11 +1,12 @@
 import styles from './BossSelection.module.css'
 const BossSelection = ({bossName, bosses, updateClears, weeklyClearLimit, reboot, setBosses}) => {
+  const bossTotal = Object.values(bosses[bossName]).reduce((sum, { value, clears }) => {
+    return sum + (value * clears) * reboot;
+  }, 0);
+
   return (
     <div className={styles.bossSelection__container}>
-      <h2
-      >
-        {bossName}
-      </h2>
+      
       <section>
         <img 
         src={`/bosses/${bossName.toLowerCase()}.png`}
@@ -27,11 +28,16 @@ const BossSelection = ({bossName, bosses, updateClears, weeklyClearLimit, reboot
               ))}
           </select>
           <div>Crystal Value: {(bosses[bossName][key].value)*reboot}</div>
-          <div>Your clear value: {(bosses[bossName][key].value * bosses[bossName][key].clears)*reboot}</div>
+          
         </section>
-        
       ))}
-      
+      <section> 
+        
+        {bossTotal}
+
+      </section>
+     
+       
     </div>
   )
 }

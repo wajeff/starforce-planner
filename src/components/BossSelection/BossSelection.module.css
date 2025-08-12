@@ -1,10 +1,13 @@
 .bossSelection__container{
-  max-width: 600px;
+  max-width: 450px;
   display: flex;
+  justify-content: space-between;
+  margin-right:10%;
 }
 img{
   height:60px;
   width:auto;
+  margin-top:10px;
 }
 select {
   padding: 8px 4px;
