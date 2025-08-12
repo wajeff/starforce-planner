@@ -5,3 +5,25 @@ img{
   height:80px;
   width:auto;
 }
+select {
+  padding: 8px 4px;
+  font-size: 14px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+}
+select {
+  appearance: none;          /* Standard */
+  -webkit-appearance: none;  /* Chrome, Safari, Edge */
+  -moz-appearance: none;     /* Firefox */
+  padding-right: 2rem;      
+  background: url('/public/bosses/dropdown.svg') no-repeat right 8px center / 12px auto;
+}
+
+
+select:focus {
+  outline: none;
+  border-color: #0077ff;
+  box-shadow: 0 0 4px rgba(0, 119, 255, 0.5);
+}
