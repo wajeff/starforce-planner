@@ -16,7 +16,7 @@ const Ursus = ({ ursus, handleUrsus, reboot,daysDifference}) => {
       <section>
         Your ursus clear value: {
           
-         <div>{13820.625 * parseInt(ursus.level || 0) * 2 * reboot * 3 * daysDifference}</div>
+         <div>{13820.625 * parseInt(ursus.level || 0) * 2 * reboot * 3 * (daysDifference||1)}</div>
           
         }
       </section>

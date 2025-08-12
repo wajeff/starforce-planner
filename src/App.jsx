@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Nav from './components/Nav/Nav'
 import Calendar from './components/Calendar/Calendar'
 import BossSelection from './components/BossSelection/BossSelection'
 import './App.css'
@@ -10,6 +11,7 @@ import MapleTour from './components/MapleTour'
 import DailyFarm from './components/DailyFarm'
 import Reset from './components/Reset'
 import CurrentMeso from './components/CurrentMeso'
+
 
 
 function usePersistentState(key, defaultValue) {
@@ -310,6 +312,7 @@ function App() {
 
   return (
     <>
+      <Nav/>
       <h1>Meso Planner</h1>
       <Reset
         setMapleTour={setMapleTour}
@@ -323,44 +326,47 @@ function App() {
         setReboot={setReboot}
         rebootToggle={rebootToggle}
       />
-      <CurrentMeso
-        currentMeso={currentMeso}
-        handleCurrentMeso={handleCurrentMeso}
-      />
       <Values
-        maxClears = {maxClears}
-        setMaxClears = {setMaxClears}
-        dailyBosses={dailyBosses}
-        reboot={reboot}
-        ursus={ursus}
-        mapleTour={mapleTour}
-        daysDifference={daysDifference}
-        total={total}
-        setTotal= {setTotal}
-        weeklyResetCount={weeklyResetCount}
-        weeklyBosses={weeklyBosses}
-        dailyFarm={dailyFarm}
-        currentMeso={currentMeso}
-      />
-      <DailyFarm
-        daysDifference={daysDifference}
-        dailyFarm={dailyFarm}
-        setDailyFarm={setDailyFarm}
-        handleDailyFarm={handleDailyFarm}
-      />
-      <Ursus
-        ursus={ursus}
-        setUrsus={setUrsus}
-        daysDifference={daysDifference}
-        handleUrsus={handleUrsus}
-        reboot={reboot}
-      />
-      <MapleTour
-        mapleTour={mapleTour}
-        setMapleTour={setMapleTour}
-        handleTour={handleTour}
-        reboot={reboot}
-      />
+          maxClears = {maxClears}
+          setMaxClears = {setMaxClears}
+          dailyBosses={dailyBosses}
+          reboot={reboot}
+          ursus={ursus}
+          mapleTour={mapleTour}
+          daysDifference={daysDifference}
+          total={total}
+          setTotal= {setTotal}
+           weeklyResetCount={weeklyResetCount}
+          weeklyBosses={weeklyBosses}
+          dailyFarm={dailyFarm}
+          currentMeso={currentMeso}
+        />
+      <section className='nonBosses__Container'>
+        <CurrentMeso
+          currentMeso={currentMeso}
+          handleCurrentMeso={handleCurrentMeso}
+        />
+        
+        <DailyFarm
+          daysDifference={daysDifference}
+          dailyFarm={dailyFarm}
+          setDailyFarm={setDailyFarm}
+          handleDailyFarm={handleDailyFarm}
+        />
+        <Ursus
+          ursus={ursus}
+          setUrsus={setUrsus}
+          daysDifference={daysDifference}
+          handleUrsus={handleUrsus}
+          reboot={reboot}
+        />
+        <MapleTour
+          mapleTour={mapleTour}
+          setMapleTour={setMapleTour}
+          handleTour={handleTour}
+          reboot={reboot}
+        />
+      </section>
       <section className='bosses__container'>
         <section className='bosses__section'>
            <h2>Daily Bosses</h2>
