@@ -9,7 +9,8 @@ const Ursus = ({ ursus, handleUrsus, reboot,daysDifference}) => {
         name='level'
         minLength='3'
         maxLength='3'
-        value={ursus.level}
+        value={ursus.level||''}
+        placeholder="Your Level"
         onChange={handleUrsus}
       >
       </input>
