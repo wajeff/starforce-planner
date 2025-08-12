@@ -1,15 +1,17 @@
 import styles from './BossSelection.module.css'
 const BossSelection = ({bossName, bosses, updateClears, weeklyClearLimit, reboot, setBosses}) => {
   return (
-    <div>
+    <div className={styles.bossSelection__container}>
       <h2
-        className={styles.bossSelection__container}
       >
         {bossName}
       </h2>
-      <img 
+      <section>
+        <img 
         src={`/bosses/${bossName.toLowerCase()}.png`}
         ></img>
+      </section>
+      
       {Object.keys(bosses[bossName]).map((key) => (
         <section 
           key={key}
