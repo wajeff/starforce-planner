@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
-import Calendar from './components/Calendar'
+import Calendar from './components/Calendar/Calendar'
 import BossSelection from './components/BossSelection/BossSelection'
 import './App.css'
 import Reboot from './components/Reboot'

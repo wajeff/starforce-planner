@@ -1,4 +1,5 @@
 #root {
+  min-width: 70%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -42,7 +43,9 @@
 }
 
 .bosses__container{
-  display:flex;
+  display: flex;
+  justify-content: center;
+  
 }
 .bosses__section{
   
